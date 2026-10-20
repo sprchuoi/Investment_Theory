@@ -1,0 +1,60 @@
+name: Deploy to GitHub Pages
+
+# Deploys only the static curriculum site (~300 KB).
+# The 3.5 GB book library is a git submodule and is intentionally not fetched:
+# GitHub Pages has a 1 GB published-site limit and the PDFs/EPUBs are copyrighted.
+#
+# Setup once: Settings -> Pages -> Build and deployment -> Source: GitHub Actions.
+
+"on":
+  push:
+    branches: ["main", "master"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          # The book submodule is not needed for the Pages build.
+          submodules: false
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Build static site
+        run: node scripts/build-site.mjs
+        env:
+          BOOKS_MODE: pages
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

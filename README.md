@@ -10,7 +10,7 @@ Trang trả lời ba câu hỏi:
 
 > Đây là tài liệu học tập, không phải khuyến nghị đầu tư. Dữ liệu macro được chốt ngày **20.10.2026**; tự kiểm chứng trước khi ra quyết định.
 >
-> **Repo deploy chỉ chứa trang tĩnh (~300 KB).** Thư viện 155 file sách nằm local, không được commit — xem [Deploy lên GitHub Pages](#deploy-lên-github-pages).
+> **Repo này chứa trang tĩnh (~300 KB) + gitlink submodule.** 3.5 GB sách nằm ở repo con, không nằm trong parent repo — xem [Deploy lên GitHub Pages](#deploy-lên-github-pages).
 
 ---
 
@@ -28,7 +28,7 @@ python3 -m http.server 8090 --bind 127.0.0.1
 # mở http://127.0.0.1:8090
 ```
 
-> Link sách chỉ hoạt động khi chạy từ thư mục gốc (bản local). `_site/` là artifact deploy, không kèm sách.
+> Bản local dùng file trong submodule; bản deploy (`_site/`) link PDF/EPUB tới GitHub raw, không host sách.
 >
 > Deploy cần Node 18+ (chỉ dùng built-in modules, không cần `npm install`).
 
@@ -54,7 +54,7 @@ Trang được thiết kế để deploy **chỉ phần giao diện (~300 KB)**.
    git push -u origin main
    ```
 
-   `.gitignore` đã loại `some-investment-books/` và `_site/`, nên chỉ ~300 KB được push.
+   Submodule sách chỉ được ghi bằng **gitlink**, không phải 3.5 GB nội dung; `_site/` bị ignore. Parent repo vẫn ~300 KB.
 
 3. GitHub → **Settings → Pages → Build and deployment → Source: GitHub Actions**.
 4. Vào tab **Actions**, chọn workflow `Deploy to GitHub Pages` và chạy (hoặc push thêm một commit).
@@ -66,26 +66,50 @@ Workflow `.github/workflows/deploy.yml` chạy `scripts/build-site.mjs`, tạo `
 
 | Mode | Lệnh | Sách | Dùng cho |
 |---|---|---|---|
-| `pages` (mặc định) | `node scripts/build-site.mjs` | Không copy; UI hiện `LOCAL ONLY` + banner | GitHub Pages |
+| `pages` (mặc định) | `node scripts/build-site.mjs` | Không copy; link PDF trỏ GitHub raw | GitHub Pages |
 | `full` | `BOOKS_MODE=full node scripts/build-site.mjs` | Copy 3.5 GB vào `_site/` | Self-host private, không dùng GitHub Pages |
 
 Ở mode `pages`, lộ trình, macro, playbook, calculator, glossary, quiz và progress vẫn hoạt động đầy đủ; chỉ link PDF/EPUB bị vô hiệu hoá.
 
 ```bash
-# Preview đúng bản sẽ deploy (không có sách)
+# Preview đúng bản sẽ deploy (link GitHub, không host sách)
 python3 -m http.server 8091 --directory _site
 # mở http://127.0.0.1:8091
 ```
 
+### Submodule sách
+
+`some-investment-books` là **git submodule** trỏ tới:
+
+```
+https://github.com/bharaniabhishek123/some-investment-books.git
+branch: master
+```
+
+- Parent repo chỉ lưu **gitlink** tại commit `748612e` (không chứa PDF/EPUB).
+- GitHub Actions checkout với `submodules: false`, nên deploy không phải tải 3.5 GB.
+- Muốn đọc PDF local:
+
+  ```bash
+  git clone --recurse-submodules https://github.com/<user>/<repo>.git
+  # hoặc nếu đã clone:
+  git submodule update --init --recursive
+  ```
+
+  Submodule ~3.5 GB; chỉ cần nếu muốn mở file local.
+
+- Bản Pages link tới `https://github.com/bharaniabhishek123/some-investment-books/raw/master/<file>`. GitHub tự redirect file LFS sang `media.githubusercontent.com`.
+- Nếu repo nguồn đổi tên/branch, cập nhật đồng thời `.gitmodules`, `assets/js/site-config.js` và `scripts/build-site.mjs`.
+
 ### Cập nhật hàng ngày
 
 - Sửa `assets/js/data-macro.js` khi có số liệu mới → commit → push; workflow tự deploy lại.
-- Nếu thêm sách local: chạy `node scripts/build-catalog.mjs` để cập nhật catalog, nhưng **không commit thư mục sách**.
+- Nếu thêm sách local: chạy `node scripts/build-catalog.mjs` để cập nhật catalog, commit thay đổi **trong submodule**, rồi cập nhật gitlink; không commit nội dung sách vào parent repo.
 - Tiến độ lưu trong `localStorage` **theo trình duyệt/thiết bị**. Điện thoại và laptop sẽ có tiến độ riêng; nếu cần sync, phải thêm backend hoặc export/import JSON.
 
 ### Nếu đã lỡ push sách
 
-GitHub Pages sẽ không nhận artifact > 1 GB và repo sẽ rất nặng. Cách sạch nhất là tạo repo mới chỉ với các file site ở root (trừ `some-investment-books/`), thay vì cố xoá lịch sử repo sách.
+Parent repo chỉ có gitlink, nên không có chuyện push 3.5 GB sách vào repo này. Nếu một repo cũ đã lỡ chứa sách, tạo repo mới sạch thay vì cố xoá lịch sử.
 
 ---
 
@@ -95,7 +119,7 @@ GitHub Pages sẽ không nhận artifact > 1 GB và repo sẽ rất nặng. Các
 |---|---|
 | **Tổng quan** | Vấn đề của thư viện, 4 nguyên tắc học, diagnostic 3 câu chọn track Investor / Trader / Hybrid |
 | **Lộ trình 8 phase** | P0 market mechanics → P1 investing foundations → P2 portfolio → P3 price action → P4 risk & system → P5 macro → P6 psychology → P7 specialization. Mỗi phase có mục tiêu, concept chips, sách, 3 task, deliverable, checkpoint và cảnh báo |
-| **Thư viện chọn lọc** | 60 cuốn có tier + lý do + key takeaway + link mở file (bản local); 20 cuốn trong danh sách skip kèm lý do; catalog 125 đầu sách tìm kiếm được |
+| **Thư viện chọn lọc** | 60 cuốn có tier + lý do + key takeaway + link mở file (local hoặc GitHub raw); 20 cuốn trong danh sách skip kèm lý do; catalog 125 đầu sách tìm kiếm được |
 | **Kinh tế 10/2026** | 13 metric có nguồn, 6 lực lượng, regime map, 4 kịch bản với trigger, góc nhìn Việt Nam, 14 nguồn tham chiếu |
 | **Playbook** | Investment thesis, trade plan, risk policy, weekly review, backtest protocol 7 bước |
 | **Công cụ** | Position sizing, expectancy, compounding (real vs nominal), drawdown recovery, Kelly |
@@ -172,7 +196,7 @@ Script gộp edition/format trùng nhau (ưu tiên PDF, sau đó năm mới nh�
 ├── assets/
 │   ├── css/style.css           # design system, responsive, print
 │   └── js/
-│       ├── site-config.js      # booksEnabled: local true / Pages false
+│       ├── site-config.js      # local links / Pages remote GitHub links
 │       ├── data-library.js     # 125 đầu sách (generated)
 │       ├── data-core.js        # phases, curated books, skip, weeks, quiz
 │       ├── data-macro.js       # snapshot 20.10.2026 + sources
@@ -180,12 +204,13 @@ Script gộp edition/format trùng nhau (ưu tiên PDF, sau đó năm mới nh�
 │       ├── data-playbook.js    # template + backtest protocol
 │       └── app.js              # render, filter, progress, calculators, quiz
 ├── .github/workflows/deploy.yml # GitHub Pages CI
-├── .gitignore                  # loại sách 3.5GB và _site/
+├── .gitignore                  # bỏ _site/ + OS; không ignore submodule
+├── .gitmodules                 # submodule sách
 ├── .nojekyll                   # GitHub Pages: không chạy Jekyll
 ├── scripts/
 │   ├── build-catalog.mjs       # regenerate data-library.js
 │   └── build-site.mjs          # tạo _site/ để deploy
-├── some-investment-books/      # local only — đã gitignore
+├── some-investment-books/      # git submodule (chỉ gitlink)
 └── README.md
 ```
 
@@ -208,7 +233,7 @@ Trang gốc không cần build, không CDN, không tracking. Chỉ khi deploy m�
 - Macro là **snapshot**, không phải live data. Giá và lãi suất thay đổi từng ngày.
 - Một số nhận định là **góc nhìn biên tập**, không phải sự thật khách quan. Chúng được gắn với trigger để bạn có thể phản biện.
 - Các con số quá khứ trong sách (backtest, return, case study) không đảm bảo cho tương lai.
-- Sách trong `some-investment-books/` thuộc bản quyền của tác giả/nhà xuất bản; repo này chỉ lưu trữ và liên kết cục bộ cho mục đích học tập.
-- Bản GitHub Pages **không kèm sách**; link PDF/EPUB chỉ hoạt động ở bản local. Progress không sync giữa các thiết bị.
+- Sách trong submodule `some-investment-books/` thuộc bản quyền của tác giả/nhà xuất bản; repo này chỉ lưu trữ và liên kết cho mục đích học tập.
+- Bản GitHub Pages **không host sách**; link PDF/EPUB trỏ tới repo nguồn trên GitHub. Nếu repo nguồn bị gỡ/đổi tên, link hỏng; bản local vẫn còn. Progress không sync giữa các thiết bị.
 
 Nếu chỉ có 10 phút: đọc **Tổng quan → Kinh tế 10/2026 → Lịch 12 tuần**, rồi bắt đầu Phase 0.

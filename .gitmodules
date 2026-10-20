@@ -1,0 +1,4 @@
+[submodule "some-investment-books"]
+    path = some-investment-books
+    url = https://github.com/bharaniabhishek123/some-investment-books.git
+    branch = master

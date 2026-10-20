@@ -44,9 +44,18 @@
   };
 
   const SITE = window.SITE_CONFIG || {};
-  const BOOKS_ENABLED = SITE.booksEnabled !== false;
+  const LOCAL_BOOKS = SITE.booksEnabled !== false;
+  const REMOTE_BOOKS = !LOCAL_BOOKS && SITE.booksRemote === true;
   const BOOKS_BASE = SITE.booksBase || "some-investment-books/";
-  const bookHref = (file) => (BOOKS_ENABLED ? `${BOOKS_BASE}${encodeURIComponent(file)}` : null);
+  const BOOKS_REMOTE_BASE = SITE.booksRemoteBase || "https://github.com/bharaniabhishek123/some-investment-books/raw/master/";
+  const BOOKS_REPO = SITE.booksRepo || "https://github.com/bharaniabhishek123/some-investment-books";
+  const BOOKS_REPO_LABEL = BOOKS_REPO.replace(/^https?:\/\/github\.com\//, "").replace(/\.git$/, "");
+  const bookLinkTitle = REMOTE_BOOKS ? "Mở/tải PDF từ repo nguồn trên GitHub" : "";
+  const bookHref = (file) => {
+    if (LOCAL_BOOKS) return `${BOOKS_BASE}${encodeURIComponent(file)}`;
+    if (REMOTE_BOOKS) return `${BOOKS_REMOTE_BASE}${encodeURIComponent(file)}`;
+    return null;
+  };
 
   const TIER_ORDER = { core: 0, support: 1, reference: 2, skip: 3 };
   const TIER_LABEL = { core: "CORE", support: "SUPPORT", reference: "REFERENCE", skip: "SKIP" };
@@ -78,9 +87,11 @@
   });
 
   const openLink = (book) => {
-    if (!BOOKS_ENABLED) return `<span class="pb-open disabled" title="Thư viện sách chỉ có ở bản local">LOCAL</span>`;
     if (!book || !book.file) return `<span class="pb-open disabled">—</span>`;
-    return `<a class="pb-open" href="${bookHref(book.file)}" target="_blank" rel="noopener">${book.fileFormat === "pdf" ? "PDF" : "EPUB"} ↗</a>`;
+    const href = bookHref(book.file);
+    if (!href) return `<span class="pb-open disabled" title="Thư viện sách chỉ có ở bản local">LOCAL</span>`;
+    const label = REMOTE_BOOKS ? "GITHUB" : book.fileFormat === "pdf" ? "PDF" : "EPUB";
+    return `<a class="pb-open" href="${href}" target="_blank" rel="noopener" title="${esc(bookLinkTitle)}">${label} ↗</a>`;
   };
 
   /* ------------------------------- state ------------------------------- */
@@ -191,9 +202,11 @@
 
   function bookCard(b) {
     const read = !!state.read[b.id];
-    const link = BOOKS_ENABLED && b.file
-      ? `<a class="book-link" href="${bookHref(b.file)}" target="_blank" rel="noopener">MỞ ${b.fileFormat === "pdf" ? "PDF" : "EPUB"} ↗</a>`
-      : `<span class="book-link disabled">${BOOKS_ENABLED ? "KHÔNG CÓ FILE" : "LOCAL ONLY"}</span>`;
+    const href = b.file ? bookHref(b.file) : null;
+    const fmt = b.fileFormat === "pdf" ? "PDF" : "EPUB";
+    const link = href
+      ? `<a class="book-link" href="${href}" target="_blank" rel="noopener" title="${esc(bookLinkTitle)}">${REMOTE_BOOKS ? "GITHUB " + fmt : "MỞ " + fmt} ↗</a>`
+      : `<span class="book-link disabled">${LOCAL_BOOKS || REMOTE_BOOKS ? "KHÔNG CÓ FILE" : "LOCAL ONLY"}</span>`;
     return `<article class="book-card ${read ? "is-read" : ""}" data-id="${esc(b.id)}" data-search="${esc(bookSearchText(b))}">
       <div class="book-top">
         <span class="tag ${TIER_CLASS[b.tier]}">${TIER_LABEL[b.tier]}</span>
@@ -267,7 +280,16 @@
 
   function renderBooksNote() {
     const note = $("#deployNote");
-    if (note) note.hidden = BOOKS_ENABLED;
+    if (!note) return;
+    note.hidden = LOCAL_BOOKS;
+    if (LOCAL_BOOKS) return;
+    if (REMOTE_BOOKS) {
+      note.innerHTML = `<span class="tag tag-gold">GITHUB SOURCE</span>
+        <p><strong>Trang này không host sách.</strong> Link PDF/EPUB mở từ repo nguồn <a href="${esc(BOOKS_REPO)}" target="_blank" rel="noopener">${esc(BOOKS_REPO_LABEL)}</a> trên GitHub. Nếu repo đổi tên hoặc bị gỡ, mở bản local hoặc cập nhật <code>site-config.js</code>.</p>`;
+    } else {
+      note.innerHTML = `<span class="tag tag-red">LOCAL ONLY</span>
+        <p><strong>Bản deploy không kèm thư viện PDF/EPUB.</strong> Sách 3.5 GB và có bản quyền, nên chỉ nằm ở bản local. Toàn bộ lộ trình, macro, playbook, calculator, glossary và quiz vẫn hoạt động đầy đủ.</p>`;
+    }
   }
 
   function renderSkipGrid() {
@@ -285,8 +307,8 @@
     $("#catalogBody").innerHTML = FULL_INDEX.map((b, i) => {
       const href = bookHref(b.p);
       const action = href
-        ? `<a class="open-link" href="${href}" target="_blank" rel="noopener">MỞ ↗</a>`
-        : `<span class="open-link disabled" title="Thư viện sách chỉ có ở bản local">LOCAL</span>`;
+        ? `<a class="open-link" href="${href}" target="_blank" rel="noopener" title="${esc(bookLinkTitle)}">${REMOTE_BOOKS ? "TẢI ↗" : "MỞ ↗"}</a>`
+        : `<span class="open-link disabled">—</span>`;
       return `<tr data-search="${esc(norm([b.t, b.y, b.f].join(" ")))}">
         <td class="num">${String(i + 1).padStart(3, "0")}</td>
         <td class="title-cell">${esc(b.t)}</td>
