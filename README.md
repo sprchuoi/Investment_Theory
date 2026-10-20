@@ -2,6 +2,8 @@
 
 Một trang học tập duy nhất, được xây từ chính thư viện sách trong repo này: **155 file → 125 đầu sách → 12 cuốn core → một lộ trình 12 tuần**.
 
+> **Live:** https://sprchuoi.github.io/Investment_Theory/ · **Repo:** https://github.com/sprchuoi/Investment_Theory
+
 Trang trả lời ba câu hỏi:
 
 1. **Đọc gì, theo thứ tự nào, trong bao lâu** — khi bạn không có thời gian đọc hết 125 cuốn.
