@@ -1,0 +1,646 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#0b0f14">
+  <title>Investment &amp; Trading Curriculum 2026 — Từ 125 cuốn sách đến một hệ thống</title>
+  <meta name="description" content="Lộ trình 12 tuần học investment và trading từ thư viện 125 đầu sách: chọn lọc 20% cốt lõi, giữ thuật ngữ tiếng Anh chuyên ngành, gắn với bối cảnh kinh tế tháng 10/2026 và các template thực chiến.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b0f14'/%3E%3Ctext x='32' y='46' font-size='40' font-family='Georgia,serif' text-anchor='middle' fill='%23d9ae5f'%3E%CE%B5%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Bỏ qua điều hướng</a>
+
+  <div class="app">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <a class="brand-mark" href="#overview" aria-label="Về đầu trang">
+          <span class="brand-glyph">ε</span>
+          <span class="brand-text">
+            <strong>INVEST<span>/</span>PATH</strong>
+            <small>curriculum 2026</small>
+          </span>
+        </a>
+        <button class="icon-btn sidebar-close" id="sidebarClose" aria-label="Đóng menu">×</button>
+      </div>
+
+      <nav class="side-nav" aria-label="Mục lục">
+        <a href="#overview" class="nav-link active" data-section="overview"><span class="nav-num">00</span><span>Tổng quan</span></a>
+        <a href="#roadmap" class="nav-link" data-section="roadmap"><span class="nav-num">01</span><span>Lộ trình 8 phase</span></a>
+        <a href="#library" class="nav-link" data-section="library"><span class="nav-num">02</span><span>Thư viện chọn lọc</span></a>
+        <a href="#macro" class="nav-link" data-section="macro"><span class="nav-num">03</span><span>Kinh tế 10/2026</span></a>
+        <a href="#playbook" class="nav-link" data-section="playbook"><span class="nav-num">04</span><span>Playbook thực chiến</span></a>
+        <a href="#tools" class="nav-link" data-section="tools"><span class="nav-num">05</span><span>Công cụ tính</span></a>
+        <a href="#glossary" class="nav-link" data-section="glossary"><span class="nav-num">06</span><span>Thuật ngữ</span></a>
+        <a href="#plan" class="nav-link" data-section="plan"><span class="nav-num">07</span><span>Lịch 12 tuần</span></a>
+        <a href="#quiz" class="nav-link" data-section="quiz"><span class="nav-num">08</span><span>Kiểm tra</span></a>
+      </nav>
+
+      <div class="side-progress">
+        <div class="progress-head">
+          <div class="progress-ring-wrap">
+            <svg class="progress-ring" viewBox="0 0 64 64" aria-hidden="true">
+              <circle class="ring-bg" cx="32" cy="32" r="27"></circle>
+              <circle class="ring-fg" id="ringProgress" cx="32" cy="32" r="27"></circle>
+            </svg>
+            <span class="progress-pct" id="progressPct">0%</span>
+          </div>
+          <div class="progress-copy">
+            <strong>Tiến độ của bạn</strong>
+            <span id="progressCount">0/0 mục</span>
+          </div>
+        </div>
+        <p class="progress-note" id="nextAction">Bắt đầu bằng Phase 0.</p>
+        <button class="btn btn-ghost btn-sm" id="resetProgress" type="button">Reset tiến độ</button>
+      </div>
+
+      <div class="side-foot">
+        <span>Dữ liệu chốt 20.10.2026</span>
+        <span>125 đầu sách · 60 curated</span>
+      </div>
+    </aside>
+
+    <div class="mobilebar">
+      <a class="brand-mark brand-mark-sm" href="#overview">
+        <span class="brand-glyph">ε</span>
+        <strong>INVEST<span>/</span>PATH</strong>
+      </a>
+      <div class="mobilebar-right">
+        <span class="mobile-progress" id="mobileProgress">0%</span>
+        <button class="icon-btn" id="sidebarOpen" aria-label="Mở menu" aria-expanded="false">☰</button>
+      </div>
+    </div>
+
+    <div class="scrim" id="scrim"></div>
+
+    <main id="main">
+      <!-- ================= OVERVIEW ================= -->
+      <section id="overview" class="section hero-section">
+        <div class="section-inner">
+          <div class="hero-grid">
+            <div class="hero-copy">
+              <div class="eyebrow"><span class="dot-live"></span> INVESTMENT &amp; TRADING CURRICULUM · 2026</div>
+              <h1>Đọc ít hơn.<br>Hiểu sâu hơn.<br><em>Giao dịch có hệ thống.</em></h1>
+              <p class="hero-lede">
+                125 đầu sách trong thư viện gốc là một mỏ vàng — và cũng là một cái bẫy: đọc hết là bất khả thi.
+                Trang này biến thư viện đó thành một <strong>lộ trình 12 tuần</strong>, chọn đúng 20% cốt lõi,
+                giữ nguyên thuật ngữ tiếng Anh chuyên ngành, và nối chúng với bối cảnh kinh tế đang diễn ra.
+              </p>
+              <div class="hero-actions">
+                <a class="btn btn-primary" href="#roadmap">Bắt đầu lộ trình <span aria-hidden="true">→</span></a>
+                <a class="btn btn-ghost" href="#macro">Góc nhìn kinh tế 10/2026</a>
+              </div>
+              <div class="hero-stats">
+                <div><strong>8</strong><span>phase</span></div>
+                <div><strong>12</strong><span>tuần</span></div>
+                <div><strong>5–6h</strong><span>mỗi tuần</span></div>
+                <div><strong>20%</strong><span>sách cốt lõi</span></div>
+              </div>
+            </div>
+
+            <div class="terminal" aria-label="Macro snapshot">
+              <div class="terminal-head">
+                <span class="terminal-dots"><i></i><i></i><i></i></span>
+                <span>MACRO_SNAPSHOT</span>
+                <span class="terminal-time">20.10.2026</span>
+              </div>
+              <div class="terminal-body">
+                <div class="tick-row"><span>FED FUNDS</span><b id="tickFed">3.75–4.00%</b><i class="up">+25bp</i></div>
+                <div class="tick-row"><span>US CPI y/y</span><b id="tickCpi">3.7%</b><i class="up">risk</i></div>
+                <div class="tick-row"><span>US 10Y</span><b id="tick10y">5.06%</b><i class="up">▲</i></div>
+                <div class="tick-row"><span>S&amp;P 500</span><b id="tickSp">7,690</b><i class="up">earnings-led</i></div>
+                <div class="tick-row"><span>CAPE</span><b id="tickCape">~41</b><i class="warn">rich</i></div>
+                <div class="tick-row"><span>GOLD</span><b id="tickGold">$4,169</b><i class="up">record zone</i></div>
+                <div class="tick-row"><span>VN-INDEX</span><b id="tickVn">1,691.97</b><i class="down">at support</i></div>
+                <div class="tick-sep"></div>
+                <p class="terminal-note">Regime: <strong>reflation / nominal boom</strong> — growth ↑, inflation ↑, long-end yields ↑. Đọc phần <a href="#macro">Kinh tế 10/2026</a> để hiểu vì sao điều này thay đổi cách bạn phân bổ.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="overview-grid">
+            <article class="panel problem-panel">
+              <div class="panel-head">
+                <span class="kicker">VẤN ĐỀ</span>
+                <h2>Thư viện này không thiếu sách. Nó thiếu <em>thứ tự</em>.</h2>
+              </div>
+              <div class="problem-list">
+                <div class="problem-item">
+                  <span class="problem-num">01</span>
+                  <div><strong>80% là trading, không phải investing.</strong><p>Forex, candlestick, swing, day trading, binary options… Nếu đọc theo cảm hứng, bạn sẽ học kỹ thuật trước khi hiểu doanh nghiệp và risk.</p></div>
+                </div>
+                <div class="problem-item">
+                  <span class="problem-num">02</span>
+                  <div><strong>Đa số sách xuất bản trước 2017.</strong><p>Chúng dạy nguyên lý vĩnh cửu, nhưng không nói gì về AI capex, 10Y ở 5%, hay một Fed tăng lãi suất giữa chu kỳ tăng trưởng mạnh.</p></div>
+                </div>
+                <div class="problem-item">
+                  <span class="problem-num">03</span>
+                  <div><strong>Đọc hết là một dạng trì hoãn.</strong><p>Kiến thức chỉ thành kỹ năng khi bạn tạo ra artifact: một company memo, một trade plan, một backtest, một journal.</p></div>
+                </div>
+              </div>
+            </article>
+
+            <article class="panel">
+              <div class="panel-head">
+                <span class="kicker">CÁCH DÙNG</span>
+                <h2>Bốn nguyên tắc của giáo trình</h2>
+              </div>
+              <div class="principles">
+                <div class="principle"><span class="p-icon">◈</span><div><strong>Output &gt; input</strong><p>Mỗi phase kết thúc bằng một deliverable. Không có deliverable, chưa tính là đã học.</p></div></div>
+                <div class="principle"><span class="p-icon">◎</span><div><strong>80/20 có chủ đích</strong><p>12 cuốn core, 44 cuốn support, 4 reference — và 20 cuốn skip. Danh sách skip cũng quan trọng như danh sách đọc.</p></div></div>
+                <div class="principle"><span class="p-icon">⌘</span><div><strong>English terms, Vietnamese context</strong><p>Giữ nguyên <em>margin of safety, expectancy, drawdown, R-multiple, CAPE</em>. Giải thích bằng tiếng Việt khi cần, không dịch máy móc.</p></div></div>
+                <div class="principle"><span class="p-icon">◐</span><div><strong>Macro là lớp phủ</strong><p>Sách dạy phương pháp; regime quyết định phương pháp nào được trả tiền. Cập nhật góc nhìn kinh tế mỗi tháng.</p></div></div>
+              </div>
+            </article>
+          </div>
+
+          <article class="panel diagnostic" id="diagnostic">
+            <div class="panel-head">
+              <span class="kicker">CHỌN HƯỚNG ĐI</span>
+              <h2>Ba câu hỏi để biết nên bắt đầu ở đâu</h2>
+              <p class="panel-sub">Không có câu trả lời đúng/sai. Mục tiêu là chọn một track và đi sâu, thay vì học song song mọi thứ.</p>
+            </div>
+            <form class="diag-form" id="diagForm">
+              <label class="diag-q">
+                <span>1. Khoảng thời gian bạn thực sự có thể giữ một vị thế?</span>
+                <select name="horizon">
+                  <option value="long">Trên 1 năm — sở hữu doanh nghiệp</option>
+                  <option value="mid">1–12 tháng — swing theo xu hướng</option>
+                  <option value="short">Dưới 1 tháng — intraday</option>
+                </select>
+              </label>
+              <label class="diag-q">
+                <span>2. Nếu danh mục giảm 20% trong một tháng, phản ứng trung thực của bạn?</span>
+                <select name="drawdown">
+                  <option value="buy">Mua thêm nếu thesis còn nguyên</option>
+                  <option value="hold">Giữ và rà lại thesis</option>
+                  <option value="sell">Cắt lỗ để ngủ ngon</option>
+                </select>
+              </label>
+              <label class="diag-q">
+                <span>3. Thời gian bạn có thể dành mỗi tuần cho việc học và theo dõi?</span>
+                <select name="time">
+                  <option value="low">Dưới 3 giờ</option>
+                  <option value="mid">3–6 giờ</option>
+                  <option value="high">Trên 6 giờ</option>
+                </select>
+              </label>
+              <button class="btn btn-primary" type="submit">Xem track phù hợp</button>
+            </form>
+            <div class="diag-result" id="diagResult" hidden></div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ================= ROADMAP ================= -->
+      <section id="roadmap" class="section">
+        <div class="section-inner">
+          <header class="section-head">
+            <div>
+              <span class="kicker">01 · LỘ TRÌNH</span>
+              <h2>Từ market mechanics đến một hệ thống có <em>expectancy</em> dương</h2>
+              <p class="section-lede">Tám phase, xếp theo thứ tự phụ thuộc. Bạn có thể bỏ qua phase chuyên biệt, nhưng không nên nhảy cóc Phase 1 và Phase 4 — đó là hai phase quyết định bạn sống sót hay không.</p>
+            </div>
+            <div class="section-actions">
+              <div class="segmented" id="trackFilter" role="group" aria-label="Lọc theo track">
+                <button class="seg active" data-track="all">Tất cả</button>
+                <button class="seg" data-track="invest">Investor</button>
+                <button class="seg" data-track="trade">Trader</button>
+              </div>
+              <button class="btn btn-ghost btn-sm" id="printRoadmap" type="button">In / PDF</button>
+            </div>
+          </header>
+
+          <div class="roadmap-legend">
+            <span><i class="tier-dot core"></i> Core — đọc kỹ</span>
+            <span><i class="tier-dot support"></i> Support — đọc chọn chương</span>
+            <span><i class="tier-dot reference"></i> Reference — tra cứu</span>
+            <span><i class="tier-dot skip"></i> Skip — bỏ</span>
+          </div>
+
+          <div class="phase-list" id="phaseList"></div>
+
+          <div class="callout callout-warn">
+            <strong>Thứ tự quan trọng hơn số lượng.</strong>
+            <p>Đừng học cách vào lệnh trước khi biết position size. Đừng học position size trước khi biết mình đang giao dịch cái gì. Nếu chỉ có 4 tuần, hãy làm Phase 0 → 1 → 4; bỏ qua toàn bộ phần chỉ báo.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= LIBRARY ================= -->
+      <section id="library" class="section">
+        <div class="section-inner">
+          <header class="section-head">
+            <div>
+              <span class="kicker">02 · THƯ VIỆN</span>
+              <h2>Danh sách đọc có <em>phân loại</em>, không phải danh sách cần đọc hết</h2>
+              <p class="section-lede">Mỗi cuốn sách được gắn tier, phase, thời lượng đọc thực tế và lý do. Bản local có link mở PDF/EPUB ngay từ repo; bản deploy giữ nguyên thư viện metadata để tra cứu. Đánh dấu “Đã đọc” để tiến độ được lưu trên máy bạn.</p>
+            </div>
+            <div class="lib-stats" id="libStats"></div>
+          </header>
+
+          <div class="deploy-note" id="deployNote" hidden>
+            <span class="tag tag-gold">GITHUB PAGES</span>
+            <p><strong>Bản deploy không kèm thư viện PDF/EPUB.</strong> Sách 3.5 GB và có bản quyền, nên chỉ nằm ở bản local. Toàn bộ lộ trình, macro, playbook, calculator, glossary và quiz vẫn hoạt động đầy đủ. Mở bản local để đọc sách.</p>
+          </div>
+
+          <div class="lib-controls">
+            <label class="search-field">
+              <span aria-hidden="true">⌕</span>
+              <input type="search" id="bookSearch" placeholder="Tìm theo tên sách, tác giả, chủ đề…" autocomplete="off">
+            </label>
+            <div class="chip-row" id="tierFilter" role="group" aria-label="Lọc theo tier">
+              <button class="chip active" data-tier="all">Tất cả</button>
+              <button class="chip" data-tier="core">Core</button>
+              <button class="chip" data-tier="support">Support</button>
+              <button class="chip" data-tier="reference">Reference</button>
+              <button class="chip" data-tier="skip">Skip</button>
+            </div>
+            <div class="chip-row" id="trackFilterBooks" role="group" aria-label="Lọc theo track">
+              <button class="chip active" data-track="all">Mọi track</button>
+              <button class="chip" data-track="invest">Invest</button>
+              <button class="chip" data-track="trade">Trade</button>
+              <button class="chip" data-track="macro">Macro</button>
+            </div>
+          </div>
+
+          <div class="book-grid" id="bookGrid"></div>
+          <p class="empty-state" id="bookEmpty" hidden>Không có cuốn nào khớp bộ lọc. Thử xoá từ khoá.</p>
+
+          <details class="skip-box" id="skipBox">
+            <summary><span class="kicker">DANH SÁCH BỎ QUA</span> <strong>Những cuốn không nên dành thời gian</strong> <span class="summary-hint">mở rộng</span></summary>
+            <p class="skip-intro">Tiết kiệm thời gian là một kỹ năng. Đây là các nhóm sách có giá trị thấp, trùng lặp, đã lỗi thời hoặc mang tính marketing — kèm lý do để bạn tự đánh giá.</p>
+            <div class="skip-grid" id="skipGrid"></div>
+          </details>
+
+          <details class="catalog-box" id="catalogBox">
+            <summary><span class="kicker">TOÀN BỘ REPO</span> <strong>Danh mục 125 đầu sách (sau khi gộp edition/format)</strong> <span class="summary-hint">mở rộng</span></summary>
+            <div class="catalog-tools">
+              <label class="search-field">
+                <span aria-hidden="true">⌕</span>
+                <input type="search" id="catalogSearch" placeholder="Lọc toàn bộ danh mục…" autocomplete="off">
+              </label>
+              <span class="catalog-count" id="catalogCount"></span>
+            </div>
+            <div class="table-wrap catalog-wrap">
+              <table class="data-table catalog-table">
+                <thead><tr><th>#</th><th>Tựa sách</th><th>Năm</th><th>Format</th><th></th></tr></thead>
+                <tbody id="catalogBody"></tbody>
+              </table>
+            </div>
+          </details>
+        </div>
+      </section>
+
+      <!-- ================= MACRO ================= -->
+      <section id="macro" class="section">
+        <div class="section-inner">
+          <header class="section-head">
+            <div>
+              <span class="kicker">03 · BỐI CẢNH</span>
+              <h2>Kinh tế tháng 10/2026: <em>nominal boom</em>, <em>real squeeze</em></h2>
+              <p class="section-lede">Tăng trưởng danh nghĩa mạnh, lạm phát chưa về 2%, Fed quay lại tăng lãi suất, và AI capex trở thành người vay cận biên của nền kinh tế. Đây là lớp phủ macro cho toàn bộ giáo trình — không phải dự báo, mà là bản đồ kịch bản.</p>
+            </div>
+            <div class="asof">
+              <span class="dot-live"></span>
+              <div><strong>Dữ liệu chốt</strong><span>20.10.2026 · 15:00 UTC</span></div>
+            </div>
+          </header>
+
+          <div class="macro-metrics" id="macroMetrics"></div>
+
+          <div class="macro-lead">
+            <p><strong>Luận điểm trung tâm:</strong> nền kinh tế Mỹ không suy yếu — nó đang tái tăng tốc trong một thế giới bị giới hạn bởi năng lượng, lao động kỹ năng cao và chi phí vốn. Vì vậy Fed tăng lãi suất <em>không phải</em> để chống suy thoái, mà để chống lạm phát dai dẳng. Với nhà đầu tư, đây là môi trường “earnings tốt nhưng multiple bị nén”: doanh thu và lợi nhuận vẫn tăng, nhưng discount rate tăng nhanh hơn. Kẻ thua cuộc là các tài sản dài hạn không có dòng tiền, và bất kỳ ai dùng leverage để mua chúng.</p>
+          </div>
+
+          <div class="forces-grid" id="macroForces"></div>
+
+          <div class="macro-two-col">
+            <article class="panel regime-panel">
+              <div class="panel-head">
+                <span class="kicker">REGIME MAP</span>
+                <h3>Bạn đang ở ô nào?</h3>
+              </div>
+              <div class="regime-wrap">
+                <svg viewBox="0 0 420 320" class="regime-svg" role="img" aria-label="Ma trận growth và inflation, hiện tại ở góc trên bên phải: growth tăng, inflation tăng">
+                  <defs>
+                    <linearGradient id="regimeGlow" x1="0" y1="1" x2="1" y2="0">
+                      <stop offset="0" stop-color="#d7a84a" stop-opacity="0"></stop>
+                      <stop offset="1" stop-color="#d7a84a" stop-opacity=".22"></stop>
+                    </linearGradient>
+                  </defs>
+                  <rect x="40" y="20" width="340" height="250" rx="6" fill="#0d141c" stroke="#24313f"></rect>
+                  <rect x="210" y="20" width="170" height="125" fill="url(#regimeGlow)"></rect>
+                  <line x1="210" y1="20" x2="210" y2="270" stroke="#2c3a49" stroke-dasharray="4 5"></line>
+                  <line x1="40" y1="145" x2="380" y2="145" stroke="#2c3a49" stroke-dasharray="4 5"></line>
+                  <text x="52" y="38" class="rg-label">GOLDILOCKS</text>
+                  <text x="222" y="38" class="rg-label">REFLATION</text>
+                  <text x="52" y="260" class="rg-label">DEFLATION</text>
+                  <text x="222" y="260" class="rg-label">STAGFLATION</text>
+                  <text x="196" y="300" class="rg-axis">GROWTH →</text>
+                  <text x="30" y="150" class="rg-axis" transform="rotate(-90 30 150)">INFLATION →</text>
+                  <circle cx="318" cy="78" r="17" fill="#d7a84a" opacity=".18"></circle>
+                  <circle cx="318" cy="78" r="7" fill="#d7a84a"></circle>
+                  <text x="318" y="103" class="rg-now">NOW · 10/2026</text>
+                </svg>
+                <div class="regime-copy">
+                  <span class="tag tag-gold">Reflation</span>
+                  <h4>Growth ↑ / Inflation ↑</h4>
+                  <p>Đây là môi trường mà <strong>earnings</strong> được trả tiền, nhưng <strong>multiple</strong> bị phạt. Cổ phiếu có pricing power, dòng tiền hiện tại và chu kỳ ngắn thường thắng; cổ phiếu tăng trưởng dài hạn không có lợi nhuận chịu áp lực duration.</p>
+                  <ul class="tight-list">
+                    <li><b>Equities:</b> quality, energy, industrials, financials hưởng lợi; unprofitable long-duration growth dễ bị de-rate.</li>
+                    <li><b>Bonds:</b> bear steepening; ưu tiên short duration, real yields; TIPS hấp dẫn hơn nominal dài.</li>
+                    <li><b>Commodities:</b> supply shock + capex boom; vàng là hedge sovereign/debasement, không chỉ là inflation hedge.</li>
+                    <li><b>EM / Việt Nam:</b> tăng trưởng mạnh nhưng nhập khẩu lạm phát và áp lực tỷ giá; chọn lọc, không leverage.</li>
+                  </ul>
+                </div>
+              </div>
+            </article>
+
+            <article class="panel">
+              <div class="panel-head">
+                <span class="kicker">HÀM Ý</span>
+                <h3>Năm điều thay đổi cách bạn đầu tư</h3>
+              </div>
+              <ol class="implications">
+                <li><strong>Duration là rủi ro số một.</strong><p>Khi 10Y ở 5.06%, mỗi 100bp tăng làm discount rate của mọi tài sản tăng. Một cổ phiếu tăng trưởng có 80% dòng tiền ở năm thứ 10 bị định giá lại mạnh hơn một công ty có dòng tiền hôm nay.</p></li>
+                <li><strong>Đừng nhầm earnings với valuation.</strong><p>S&amp;P 500 tăng nhưng P/E giảm — đó là bullish về nền kinh tế, không phải bullish về định giá. CAPE ~41 vẫn là vùng chỉ từng thấy năm 1999.</p></li>
+                <li><strong>AI capex là chu kỳ đầu tư, không phải tôn giáo.</strong><p>Theo dõi capex guidance, depreciation, credit spread của hyperscaler và neocloud. Khi chi phí vốn tăng, dự án biên bị cắt trước.</p></li>
+                <li><strong>Vàng và Bitcoin không cùng một luận điểm.</strong><p>Vàng hưởng lợi từ rủi ro sovereign/debasement và dòng tiền NHTW; BTC là high-beta liquidity, nhạy với risk appetite và ETF flows. Đừng mua cả hai chỉ vì “inflation hedge”.</p></li>
+                <li><strong>Việt Nam: tăng trưởng thật, nhưng có ba ràng buộc.</strong><p>GDP 9 tháng +9.01%, CPI 4.52%, lãi suất điều hành 4.5%, tín dụng tăng nhanh hơn huy động, VND chịu áp lực. VN-Index đang test đáy tháng 7 — đây là vùng cần kỷ luật, không phải vùng để all-in bằng margin.</p></li>
+              </ol>
+            </article>
+          </div>
+
+          <div class="panel scenarios-panel">
+            <div class="panel-head">
+              <span class="kicker">SCENARIO MAP</span>
+              <h3>Bốn kịch bản, bốn cách phản ứng — không phải bốn dự báo</h3>
+              <p class="panel-sub">Không gán xác suất. Gán <em>trigger</em> và <em>phản ứng</em>. Khi trigger xuất hiện, bạn đã có kế hoạch.</p>
+            </div>
+            <div class="scenario-grid" id="scenarioGrid"></div>
+          </div>
+
+          <div class="macro-two-col vn-panel">
+            <article class="panel">
+              <div class="panel-head">
+                <span class="kicker">VIỆT NAM</span>
+                <h3>Bức tranh trong nước: tăng trưởng nhanh, chính sách bị kẹp</h3>
+              </div>
+              <div class="vn-metrics" id="vnMetrics"></div>
+              <div class="vn-copy">
+                <p><strong>Điểm mấu chốt:</strong> Chính phủ theo đuổi mục tiêu tăng trưởng hai con số (hướng tới 10%+ năm 2027) trong khi CPI bình quân 9 tháng đã 4.52% và lãi suất điều hành giữ ở 4.5%. Tín dụng tăng nhanh hơn huy động, lãi suất huy động có xu hướng tăng, và Ngân hàng Nhà nước phải cân bằng giữa hỗ trợ tăng trưởng, kiểm soát lạm phát và ổn định VND.</p>
+                <p><strong>Hệ quả cho nhà đầu tư:</strong> đây là môi trường thuận cho doanh nghiệp có pricing power và bảng cân đối lành mạnh, bất lợi cho doanh nghiệp phụ thuộc đòn bẩy. VN-Index đang ở vùng hỗ trợ 1,650–1,680; khối ngoại bán ròng; thanh khoản thấp. Trong regime này, <em>“cash is a position”</em> — và một position có lợi suất 5% ở Mỹ là đối thủ thực sự của cổ phiếu.</p>
+              </div>
+            </article>
+
+            <article class="panel">
+              <div class="panel-head">
+                <span class="kicker">ĐIỀU GÌ SẼ KHIẾN TÔI ĐỔI Ý</span>
+                <h3>Danh sách phản biện</h3>
+              </div>
+              <ul class="falsify-list">
+                <li><b>Bull case:</b> CPI về dưới 3%, 10Y về dưới 4.5%, Fed ngừng tăng. Khi đó duration được thả, growth stocks bùng nổ trở lại.</li>
+                <li><b>Bear case:</b> CPI vượt 4%, Fed tăng thêm 2 lần, 10Y vượt 5.5%. Khi đó cả equity và bond cùng giảm — chỉ cash và vàng giữ được.</li>
+                <li><b>AI credit event:</b> capex guidance bị cắt, spread của hyperscaler/neocloud mở rộng, private credit stress. Khi đó “AI trade” không còn là earnings trade mà là credit trade.</li>
+                <li><b>Việt Nam:</b> VND mất giá quá 3–4%, NHNN buộc phải thắt chặt; hoặc CPI vượt 5% khiến room hạ lãi suất biến mất.</li>
+              </ul>
+              <p class="falsify-note">Nếu một trong các trigger này xuất hiện, cập nhật lại phần macro và scenario map — đừng giữ niềm tin cũ chỉ vì đã viết nó ra.</p>
+            </article>
+          </div>
+
+          <div class="panel sources-panel">
+            <div class="panel-head">
+              <span class="kicker">NGUỒN</span>
+              <h3>Dữ liệu và bài viết tham chiếu</h3>
+            </div>
+            <ul class="sources-list" id="sourcesList"></ul>
+            <p class="disclaimer">Trang này là tài liệu học tập và tổng hợp thông tin, không phải khuyến nghị đầu tư. Dữ liệu macro thay đổi hàng ngày; các con số được chốt tại thời điểm ghi trên. Tự kiểm chứng trước khi ra quyết định.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= PLAYBOOK ================= -->
+      <section id="playbook" class="section">
+        <div class="section-inner">
+          <header class="section-head">
+            <div>
+              <span class="kicker">04 · THỰC CHIẾN</span>
+              <h2>Từ sách đến <em>artifact</em>: template, checklist, quy trình</h2>
+              <p class="section-lede">Sách cho bạn framework. Playbook cho bạn hành động. Dùng các template này như ràng buộc — viết ngắn, viết cụ thể, và ghi lại điều kiện để mình sai.</p>
+            </div>
+          </header>
+
+          <div class="playbook-grid" id="playbookGrid"></div>
+
+          <div class="panel backtest-panel">
+            <div class="panel-head">
+              <span class="kicker">QUY TRÌNH</span>
+              <h3>Backtest protocol: 7 bước trước khi tin một hệ thống</h3>
+              <p class="panel-sub">Một backtest đẹp không chứng minh được điều gì cho đến khi nó sống sót qua các bước sau.</p>
+            </div>
+            <ol class="protocol" id="backtestSteps"></ol>
+            <div class="callout callout-warn">
+              <strong>Ba dấu hiệu của một backtest tự lừa mình:</strong>
+              <p>1) Kết quả đẹp bất thường (&gt;3 Sharpe) trên dữ liệu nhỏ; 2) số tham số gần bằng số trade; 3) chỉ có một bộ tham số duy nhất cho kết quả tốt, xung quanh đều tệ. Hãy thử phá hệ thống trước khi tin nó.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= TOOLS ================= -->
+      <section id="tools" class="section">
+        <div class="section-inner">
+          <header class="section-head">
+            <div>
+              <span class="kicker">05 · CÔNG CỤ</span>
+              <h2>Bốn phép tính bạn sẽ dùng <em>mỗi tuần</em></h2>
+              <p class="section-lede">Không có gì thay thế được việc tự tính tay một lần. Sau đó, dùng các calculator này để kiểm tra quyết định trước khi bấm nút.</p>
+            </div>
+          </header>
+
+          <div class="tools-grid">
+            <article class="panel tool-card">
+              <div class="tool-head"><span class="tool-icon">01</span><h3>Position sizing</h3></div>
+              <p class="tool-desc">Xác định số lượng theo <strong>risk budget</strong>, không theo cảm giác. Công thức: <code>units = (account × risk%) / |entry − stop|</code>.</p>
+              <div class="tool-form" data-calc="size">
+                <label>Account size<input type="number" id="psAccount" value="100000000" min="0" step="1000000"></label>
+                <label>Risk per trade (%)<input type="number" id="psRisk" value="1" min="0.1" max="10" step="0.1"></label>
+                <label>Entry price<input type="number" id="psEntry" value="50000" min="0" step="100"></label>
+                <label>Stop price<input type="number" id="psStop" value="47000" min="0" step="100"></label>
+                <label>Lot size (optional)<input type="number" id="psLot" value="100" min="1" step="1"></label>
+              </div>
+              <div class="tool-out" id="psOut"></div>
+            </article>
+
+            <article class="panel tool-card">
+              <div class="tool-head"><span class="tool-icon">02</span><h3>Expectancy</h3></div>
+              <p class="tool-desc">Một hệ thống không được đánh giá bằng win rate, mà bằng <strong>kỳ vọng mỗi trade</strong>. Nhập R-multiple trung bình.</p>
+              <div class="tool-form" data-calc="exp">
+                <label>Win rate (%)<input type="number" id="exWin" value="45" min="0" max="100" step="1"></label>
+                <label>Avg win (R)<input type="number" id="exWinR" value="2" min="0" step="0.1"></label>
+                <label>Avg loss (R)<input type="number" id="exLossR" value="1" min="0" step="0.1"></label>
+              </div>
+              <div class="tool-out" id="exOut"></div>
+            </article>
+
+            <article class="panel tool-card">
+              <div class="tool-head"><span class="tool-icon">03</span><h3>Compounding</h3></div>
+              <p class="tool-desc">Thấy rõ hai thứ: sức mạnh của thời gian, và thiệt hại của lạm phát. Kết quả là giá trị <strong>real</strong>, không chỉ nominal.</p>
+              <div class="tool-form" data-calc="comp">
+                <label>Vốn ban đầu<input type="number" id="coInitial" value="100000000" min="0" step="10000000"></label>
+                <label>Góp mỗi tháng<input type="number" id="coMonthly" value="5000000" min="0" step="1000000"></label>
+                <label>Return/năm (%)<input type="number" id="coRate" value="10" min="-20" max="50" step="0.5"></label>
+                <label>Số năm<input type="number" id="coYears" value="15" min="1" max="60" step="1"></label>
+                <label>Lạm phát (%)<input type="number" id="coInfl" value="4" min="0" max="20" step="0.5"></label>
+              </div>
+              <div class="tool-out" id="coOut"></div>
+            </article>
+
+            <article class="panel tool-card">
+              <div class="tool-head"><span class="tool-icon">04</span><h3>Drawdown recovery</h3></div>
+              <p class="tool-desc">Mất 50% cần lãi 100% để hoà vốn. Đây là lý do toán học khiến <strong>capital preservation</strong> quan trọng hơn tối đa hoá lợi nhuận.</p>
+              <div class="tool-form" data-calc="dd">
+                <label>Mức drawdown (%)<input type="number" id="ddLoss" value="30" min="1" max="99" step="1"></label>
+              </div>
+              <div class="tool-out" id="ddOut"></div>
+            </article>
+          </div>
+
+          <div class="panel kelly-panel">
+            <div class="panel-head">
+              <span class="kicker">CẢNH BÁO TOÁN HỌC</span>
+              <h3>Kelly criterion: hấp dẫn trên giấy, nguy hiểm trong thực tế</h3>
+            </div>
+            <div class="kelly-grid">
+              <div class="kelly-form">
+                <label>Win rate (%)<input type="number" id="kellyWin" value="45" min="0" max="100" step="1"></label>
+                <label>Payoff ratio (avg win / avg loss)<input type="number" id="kellyPayoff" value="2" min="0.1" step="0.1"></label>
+                <div class="kelly-out" id="kellyOut"></div>
+              </div>
+              <p class="kelly-note">Công thức: <code>f* = W − (1 − W) / R</code>. Full Kelly tối đa hoá tăng trưởng kỳ vọng nhưng tạo drawdown không thể chịu đựng. Trong thực tế, dùng <strong>quarter-Kelly đến half-Kelly</strong>, và luôn giới hạn bởi risk rule (0.5–1% mỗi trade). Kelly giả định bạn biết chính xác W và R — bạn không biết.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= GLOSSARY ================= -->
+      <section id="glossary" class="section">
+        <div class="section-inner">
+          <header class="section-head">
+            <div>
+              <span class="kicker">06 · THUẬT NGỮ</span>
+              <h2>Giữ tiếng Anh chuyên ngành, giải thích bằng tiếng Việt</h2>
+              <p class="section-lede">Bạn sẽ gặp những từ này trong mọi cuốn sách. Học chúng một lần, dùng chúng như ngôn ngữ mẹ đẻ của nghề. Tìm kiếm theo tiếng Anh hoặc tiếng Việt.</p>
+            </div>
+            <div class="glossary-count" id="glossaryCount"></div>
+          </header>
+          <div class="glossary-controls">
+            <label class="search-field">
+              <span aria-hidden="true">⌕</span>
+              <input type="search" id="glossarySearch" placeholder="Tìm thuật ngữ: drawdown, margin of safety, CAPE…" autocomplete="off">
+            </label>
+            <div class="chip-row" id="glossaryCats" role="group" aria-label="Lọc theo nhóm"></div>
+          </div>
+          <div class="glossary-grid" id="glossaryGrid"></div>
+          <p class="empty-state" id="glossaryEmpty" hidden>Không tìm thấy thuật ngữ này. Thử từ khoá ngắn hơn.</p>
+        </div>
+      </section>
+
+      <!-- ================= PLAN ================= -->
+      <section id="plan" class="section">
+        <div class="section-inner">
+          <header class="section-head">
+            <div>
+              <span class="kicker">07 · LỊCH HỌC</span>
+              <h2>12 tuần, 5–6 giờ mỗi tuần, một deliverable mỗi tuần</h2>
+              <p class="section-lede">Đây là nhịp độ đề xuất cho người đi làm. Nếu tuần nào không hoàn thành, đừng nhảy sang tuần tiếp theo — lặp lại tuần đó. Học theo deliverable, không theo số trang.</p>
+            </div>
+            <div class="plan-summary" id="planSummary"></div>
+          </header>
+
+          <div class="plan-table-wrap">
+            <table class="data-table plan-table">
+              <thead>
+                <tr><th></th><th>Tuần</th><th>Phase</th><th>Trọng tâm</th><th>Giờ</th><th>Deliverable</th></tr>
+              </thead>
+              <tbody id="planBody"></tbody>
+            </table>
+          </div>
+
+          <div class="plan-bottom">
+            <div class="panel">
+              <div class="panel-head"><span class="kicker">NHỊP ĐỘ THAY THẾ</span><h3>Nếu chỉ có 3 giờ/tuần</h3></div>
+              <p>Kéo dài thành 20 tuần: giữ nguyên thứ tự phase, giảm mỗi tuần xuống một chương + một bài tập nhỏ. Bỏ phần đọc reference. Ưu tiên tuyệt đối: <strong>Phase 1 (định giá) → Phase 4 (risk) → Phase 5 (macro)</strong>. Phase 3 chỉ cần đủ để đọc chart và đặt stop, không cần trở thành chartist.</p>
+            </div>
+            <div class="panel">
+              <div class="panel-head"><span class="kicker">THÓI QUEN HÀNG NGÀY</span><h3>30 phút mỗi ngày</h3></div>
+              <ul class="routine-list">
+                <li><b>10 phút:</b> đọc một chương sách hoặc một bài macro, ghi 3 dòng “điều này thay đổi gì trong cách tôi ra quyết định?”</li>
+                <li><b>10 phút:</b> cập nhật watchlist và kiểm tra xem có trigger nào trong scenario map xuất hiện không.</li>
+                <li><b>10 phút:</b> viết journal — chỉ ghi quyết định, lý do, và cảm xúc. Không ghi dự báo giá.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= QUIZ ================= -->
+      <section id="quiz" class="section">
+        <div class="section-inner">
+          <header class="section-head">
+            <div>
+              <span class="kicker">08 · KIỂM TRA</span>
+              <h2>Mười hai câu hỏi mà một nhà đầu tư nghiêm túc phải trả lời được</h2>
+              <p class="section-lede">Không phải để lấy điểm. Để phát hiện lỗ hổng trước khi thị trường phát hiện hộ bạn.</p>
+            </div>
+            <div class="quiz-score" id="quizScore">Chưa chấm</div>
+          </header>
+          <form id="quizForm" class="quiz-form"></form>
+          <div class="quiz-actions">
+            <button class="btn btn-primary" id="quizSubmit" type="button">Chấm điểm</button>
+            <button class="btn btn-ghost" id="quizReset" type="button">Làm lại</button>
+          </div>
+        </div>
+      </section>
+
+      <footer class="site-footer">
+        <div class="footer-grid">
+          <div>
+            <div class="brand-mark"><span class="brand-glyph">ε</span><span class="brand-text"><strong>INVEST<span>/</span>PATH</strong><small>curriculum 2026</small></span></div>
+            <p class="footer-note">Một trang học tập được xây từ chính thư viện sách trong repo. Không phải khuyến nghị đầu tư. Dữ liệu macro chốt ngày 20.10.2026; tự cập nhật trước khi sử dụng.</p>
+          </div>
+          <div>
+            <h4>Đi nhanh</h4>
+            <a href="#roadmap">Lộ trình</a><a href="#library">Thư viện</a><a href="#macro">Kinh tế 10/2026</a><a href="#tools">Công cụ</a>
+          </div>
+          <div>
+            <h4>Nguyên tắc</h4>
+            <span>Output &gt; input</span><span>Risk first</span><span>Process &gt; outcome</span><span>English terms, Vietnamese context</span>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>125 đầu sách · 60 curated · 20 skip</span>
+          <span>Cập nhật lần cuối: 20.10.2026</span>
+        </div>
+      </footer>
+    </main>
+  </div>
+
+  <button class="to-top" id="toTop" aria-label="Về đầu trang" hidden>↑</button>
+
+  <noscript>
+    <div class="noscript">Trang này cần JavaScript để hiển thị lộ trình, thư viện và các công cụ tính. Nội dung vẫn có thể đọc trong file HTML, nhưng trải nghiệm đầy đủ yêu cầu bật JavaScript.</div>
+  </noscript>
+
+  <script src="assets/js/site-config.js"></script>
+  <script src="assets/js/data-library.js"></script>
+  <script src="assets/js/data-core.js"></script>
+  <script src="assets/js/data-macro.js"></script>
+  <script src="assets/js/data-glossary.js"></script>
+  <script src="assets/js/data-playbook.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
